@@ -1,0 +1,18 @@
+1. Form Pendaftaran ditambahakan ceklist parameter yang akan diperiksa
+2. form hasil akan diinput oleh analis, di approve oleh koordinator dan manager
+3. ada opsi input hasil lebih dari 1x untuk sampel yang sama
+4. opsi cetakan hasil ada 2, cetakan "KAN dan Cetakan tanpa KAN"
+5. jika hasil pengujian banyak dan menjadi 2 lembar, tanda tangan tetap 1 dibagian akhir dan tidak
+terpotong ditengah2 parameter
+6. tersedia opsi konvert hasil ke format office word
+7. ada opsi untuk input hasil sub parameter
+8. tersedia menu untuk input PMI/QA
+9. tersedia menu untuk input master pesyaratan dengan field jenis sample dan syarat tampilkan di print out
+hasil berdasarkan syarat
+10. list hasil lab ditambah kolom status jatuh tempo dn status selesai/belum
+11. tabel metode diganti menjadi kategori parameter, tabel metode diganti menjadi parameter,
+tambahkan tabel sub_parameter.
+12 report yang dibutuhkan
+- report rekap hasil lab
+- report rekap log book
+- report dan grafik harga per parameter, perbulan

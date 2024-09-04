@@ -1,0 +1,346 @@
+<?php 
+$res_par = array();
+foreach ($detail as $key => $val1) {
+  $res_par[$val1->kd_kategori_parameter][]=$val1;
+}
+foreach ($res_par as $key => $value) {
+  // test($value,0);
+}
+$today = $this->db->query("SELECT CURRENT_TIME() as today")->row()->today;
+?>
+<style>
+  @media print{
+    .break {
+      break-inside: avoid;
+    }
+  /*@page {
+    size: portrait;
+    }
+  }*/
+  }
+  @page {
+    /*size: A4;
+    margin: 0;*/
+    size: Legal portrait;
+    margin: 0.4in
+  }
+      .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
+      .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+           float: left;               
+      }
+      .col-sm-12 {
+           width: 100%;
+      }
+      .col-sm-11 {
+           width: 91.66666666666666%;
+      }
+      .col-sm-10 {
+           width: 83.33333333333334%;
+      }
+      .col-sm-9 {
+            width: 75%;
+      }
+      .col-sm-8 {
+            width: 66.66666666666666%;
+      }
+       .col-sm-7 {
+            width: 58.333333333333336%;
+       }
+       .col-sm-6 {
+            width: 50%;
+       }
+       .col-sm-5 {
+            width: 41.66666666666667%;
+       }
+       .col-sm-4 {
+            width: 33.33333333333333%;
+       }
+       .col-sm-3 {
+            width: 25%;
+       }
+       .col-sm-2 {
+              width: 16.666666666666664%;
+       }
+       .col-sm-1 {
+              width: 8.333333333333332%;
+        } 
+        @page {
+      size: portrait;
+      } 
+  .borderluar {
+    border: 2px solid black;
+    padding: 0px;
+  }
+  .borderdalem {
+    border: 1px solid #000000b0;
+    padding: 0px;
+  }
+  .borderdalemcenter {
+    border: 1px solid #000000b0;
+    padding: 0px;
+    text-align: center;
+  }
+  .borderdalemangka {
+    border: 1px solid #000000b0;
+    padding: 0px 5px;
+    text-align: right;
+  }
+  .borderdalemangka_detail {
+    padding: 0px 5px;
+  }
+  .bordertengah {
+    border: 1px solid #000000b0;
+    padding: 5px 5px 5px 5px; 
+  }
+  p.two {
+    border-style: solid;
+    border-width: 1px;
+  }
+  .header{
+    padding: 0px 30px; 
+    text-align: center;
+  }
+  .header_alamat {
+    border: 2px solid black;
+    padding: 0px 30px; 
+    text-align: center;
+  }
+  .table_detail {
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  hr {
+    border-bottom: 2px solid black;
+    box-shadow: 0px 5px 0 black;
+  }
+  .table {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+</style>
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-body">
+          <table style="width:100%;font-family: initial;">
+            <tr>
+              <td colspan="4">
+                <table style='width:100%;font-family: initial;'> 
+                  <tr>
+                    <td align="center" colspan="2" width='20%' valign="bottom">
+                      <img src="<?= base_url('assets/image/542px-Lambang_Kota_Tangerang.png') ?>" alt="" height="100" width='100'>
+                    </td>
+                    <td colspan="2" width='80%' align="center">
+                      <strong style="font-size: 19px;">
+                        PEMERINTAH KOTA TANGERANG<br/>
+                        DINAS KESEHATAN<br/>
+                        UPT LABORATORIUM KESEHATAN DAERAH<br/>
+                      </strong>
+                      <strong>
+                        JL. TMP Taruna Suka Asih Telp/Fax : 021 - 5588737 Kota Tangerang 15111<br/>
+                        Email : labkeskota.tangerang@gmail.com
+                      </strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" align="center"><hr/></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4" align="center"><strong style="font-size: 22px;">Formulir Permintaan Pengujian Sampel Makanan & Minuman</strong></td>
+            </tr>
+            <tr>
+              <td colspan="4" align="center" height="10"></td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <table style="width:100%;font-family: initial;border: 1px solid black;">
+                  <tr>
+                    <td width="15%">No. Lab</td>
+                    <td width="35%">: <?php echo $header->no_pendaftaran; ?></td>
+                    <td width="20%">Keterangan Sampel</td>
+                    <td width="30%">: <?php echo $header->ket_sampel; ?></td>
+                  </tr>
+                  <tr>
+                    <td>Pemilik</td>
+                    <td>: <?php echo $header->nama; ?></td>
+                    <td>Tgl. Diterima</td>
+                    <td>: <?php echo tgl_singkat($header->tgl_diterima).' '.$today; ?></td>
+                  </tr>
+                  <tr>
+                    <td>Alamat</td>
+                    <td>: <?php echo $header->alamat; ?></td>
+                    <td>Tgl. Pengujian</td>
+                    <td>: <?php echo tgl_singkat($header->tgl_pengujian); ?></td>
+                  </tr>
+                  <tr>
+                    <td>Telepon</td>
+                    <td>: <?php echo $header->telp; ?></td>
+                    <td>Tgl. Selesai</td>
+                    <td>: <?php echo tgl_singkat($header->tgl_selesai); ?></td>
+                  </tr>
+                  <tr>
+                    <td>Jenis Sampel</td>
+                    <td>: <?php echo $header->nm_sampel; ?></td>
+                    <td>Nama Sampel</td>
+                    <td>: <?php echo $header->uraian_sampel; ?></td>
+                  </tr>
+                  <tr>
+                  <td>Volume</td>
+                    <td>: <?php echo $header->banyak; ?></td>
+                    <!-- <td>Volume</td>
+                    <td>: <?php echo $header->banyak; ?></td> -->
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- <tr>
+              <td colspan="4" align="center" height="10"></td>
+            </tr>
+            <tr>
+              <td colspan="4" align="center">Pemeriksaan yang diinginkan harap diberi tanda (x)</td>
+            </tr>
+            <tr>
+              <td colspan="4" align="center">* Puasa 10 - 12 Jam Sebelum Pemeriksaan</td>
+            </tr> -->
+            <!-- <tr>
+              <td>Telepon</td>
+              <td>: <?php echo $header->telp; ?></td>
+              <td></td>
+              <td></td>
+            </tr> -->
+            <tr>
+              <td colspan="4" align="center" height="10"></td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <table style="width:100%;font-family: initial;border: 1px solid black;">
+                  <tr style="border: 1px solid black;">
+                    <td>Parameter</td>
+                    <td>Jenis Pemeriksaan</td>
+                    <td>Keterangan</td>
+                    <td width="10%">Harga</td>
+                  </tr>
+                  <?php 
+                  $total    = 0; 
+                  foreach ($detail_kdpar as $key => $value) {
+                  $nm_kategori_parameter     = $value->nm_kategori_parameter;
+                  ?>
+                  <tr style="border: 1px solid black">
+                    <td colspan="4"><?php echo $nm_kategori_parameter; ?></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">
+                      <div class="content_acc">
+                        <div class="form-group">
+                          <?php
+                          foreach ($res_par[$value->kd_kategori_parameter] as $key => $value) {
+                          $total    = $total+$value->harga;
+                          ?>                      
+                            <div class="border-bottom">
+                              <div class="col-sm-1">
+                                <span style="margin-left: 20px;">&#8226;</span>
+                              </div> 
+                              <div class="col-sm-3">
+                                <?php echo $value->nm_parameter; ?>
+                              </div> 
+                            </div>                      
+                          <?php
+                          }
+                          ?>      
+                        </div>
+                      </div>           
+                    </td>
+                  </tr>  
+                  <?php 
+                  }
+                  ?>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3" align="right"><br/></td>
+              <td align="right"></td>
+            </tr>
+            <tr>
+              <td align="right" colspan="2"></td>
+              <td align="right" colspan="2" width="50%">
+                <table width="100%" class="table">
+                  <tr>
+                    <td width="50%">Verifikasi Koordinator</td>
+                    <td>:</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Paraf Koordinator ADM</td>
+                    <td>:</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Verifikasi PJ Teknis</td>
+                    <td>:</td>
+                    <td></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- <tr>
+              <td colspan="4" align="center">
+                PERSETUJUAN PENGAMBILAN SPESIMEN <br/>
+                Dengan ini kami menyatakan setuju untuk dilakukan pengambilan spesimen darah vena/darah kapiler/urin/tinja sesuai prosedur yang telah ditetapkan oleh UPTD Laboratorium Kesehatan Kota Tangerang <br/>
+                Note : labkesda berhak melakukan perubahan metode apabila diperlukan <br/>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4" align="left"><br/>
+                LABKESDA BERHAK MELAKUKAN PERUBAHAN METODE APABILA DIPERLUKAN<br/>
+              </td>
+            </tr> -->
+          </table>
+          <table style="width:100%;font-family: initial;" class="break">
+            <tr>
+              <!-- <td colspan="4" >
+                Uji Ulang Permintaan, Tender dan Kontrak
+                <table width="70%">
+                  <tr>
+                    <td class="table" align="center">Metode</td>
+                    <td class="table" align="center">Alat</td>
+                    <td class="table" align="center">Personil</td>
+                    <td class="table" align="center">Kondisi Akomodasi</td>
+                    <td class="table" align="center">Bahan Kimia</td>
+                    <td class="table" align="center">Ttd</td>
+                  </tr>
+                  <tr>
+                    <td class="table" width="15%" height="50px"></td>
+                    <td class="table" width="15%"></td>
+                    <td class="table" width="15%"></td>
+                    <td class="table" width="15%"></td>
+                    <td class="table" width="15%"></td>
+                    <td class="table" width="15%"></td>
+                  </tr>
+                </table>
+              </td> -->
+            </tr>
+            <!-- <tr>
+              <td colspan="2" >
+              </td>
+              <td valign="bottom" align="center">Pemohon</td>
+              <td valign="bottom" >Tangerang, <?= /*tgl_singkat($header->tgl_input)*/tgl_singkat(dbnow()); ?><br/>Bagian Penerima Sampel</td>
+            </tr>
+            <tr class="pagebreak">
+              <td></td>
+              <td></td>
+              <td align="center"><br/><br/><br/><br/><br/>(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+              <td ><br/><br/><br/><br/><br/>(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+            </tr> -->
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</head>
+<!-- <script>window.print(); setTimeout(function(){window.close();},500);</script> -->

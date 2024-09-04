@@ -1,0 +1,6 @@
+aksesnya hrsnya ada :
+1. Administrator (all menu)
+2. Pendaftaran (menu transaksi pendaftaran, hasil pemeriksaan)
+3. Manajer Teknis (semua menu transaksi dan report, approve hasil)
+4. Kepala Lab (semua menu transaksi dan report)
+5. Analis (hasil pemeriksaan, pemantapan mutu internal, approve hasil)

@@ -1,0 +1,19 @@
+(Done) 1. ditampilkan suggestion nama customer dari transaksi yang pernah terjadi di pendaftaran
+
+
+(Done) 4. tidak ada tanda tangan kepala lab di hasil, namun ad di lembaran lampiran hasil (semua lab)
+(Done) 5. pilihan cetak KAN dan KALK (semua lab)
+
+(Done) 7. tambah catatan untuk sampel lingkungan (lab lingkungan) Labkesda berhak melakukan perubahan metode apabila diperlukan
+(Done) 8. tanda *** dihapus (lab lingkungan)
+(Done) 9. ** diganti menjadi tanda # -> parameter lapangan yang dilakukan pengujiannya di laboratorium (lab lingkungan)
+(Done) 10 *** diganti menjadi tanda # (di lab lingkungan) 
+(Done) 11. font style di hasil format word diganti menjadi format Times New Roman=10
+(Done) 12. PMI bisa dicetak per parameter (HTML)
+(Done) 13. Header atau kop surat ada pilihan ada atau tidak
+
+
+
+2. parameter muncul berdasarkan pilihan sampel (lab lingkungan), ditambahkan kode sampel di master parameter
+3. ditambahkan check all disetiap parameter di form pendaftaran 
+6. ada pilihan kepala lab/kepala tata usaha di cetak hasil (semua lab)

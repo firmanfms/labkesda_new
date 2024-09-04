@@ -1,0 +1,52 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+$route['default_controller'] = 'users';
+$route['login'] = 'users';
+$route['logout'] = 'users/logout';
+//Master
+$route['user'] = 'master/user';
+$route['kat_barang'] = 'master/kat_barang';
+$route['kat_barang_sub'] = 'master/kat_barang_sub';
+$route['kat_aset'] = 'master/kat_aset';
+$route['satuan'] = 'master/satuan';
+$route['barang'] = 'master/barang';
+$route['harga'] = 'master/harga';
+$route['vendor'] = 'master/vendor';
+$route['parameter'] = 'master/parameter';
+$route['sampel'] = 'master/sampel';
+$route['laboratorium'] = 'master/laboratorium';
+$route['metode'] = 'master/metode';
+$route['dokter'] = 'master/dokter';
+$route['manajemen'] = 'master/manajemen';
+$route['keterangan'] = 'master/keterangan';
+$route['lokasi'] = 'master/lokasi';
+$route['lokasi_sub'] = 'master/lokasi_sub';
+$route['lokasi_assets'] = 'master/lokasi_assets';
+$route['aset'] = 'master/aset';
+// $route['EmailC'] = 'master/EmailC';
+$route['email'] = 'master/user/kirimemail';
+$route['emailkirim'] = 'master/user/send_email';
+//Tranasaction
+$route['mutasi_masuk'] = 'transaksi/mutasi_masuk';
+$route['mutasi_keluar'] = 'transaksi/mutasi_keluar';
+$route['mutasi_lokasi'] = 'transaksi/mutasi_lokasi';
+$route['mutasi_lokasi_masuk'] = 'transaksi/mutasi_lokasi_masuk';
+$route['adjustment'] = 'transaksi/adjustment';
+$route['transaksi/pendaftaran_klinik'] = 'transaksi/pendaftaran_klinik';
+$route['transaksi/mutasi_lokasi_masuk'] = 'transaksi/mutasi_lokasi_masuk';
+$route['transaksi/pendaftaran_lingkungan'] = 'transaksi/pendaftaran_lingkungan';
+$route['transaksi/pendaftaran_maknum'] = 'transaksi/pendaftaran_maknum';
+$route['transaksi/hasil_klinik'] = 'transaksi/hasil_klinik';
+$route['transaksi/hasil_lingkungan'] = 'transaksi/hasil_lingkungan';
+$route['transaksi/hasil_maknum'] = 'transaksi/hasil_maknum';
+//Report
+$route['pemantauan'] = 'report/pemantauan';
+$route['report/pemantauan'] = 'report/parameter';
+$route['lab_lingkungan'] = 'report/lab_lingkungan';
+$route['stok'] = 'report/stok';
+$route['history_stok'] = 'report/stok/history_stok';
+$route['kategori_stok'] = 'report/stok/kategori_stok';
+$route['pemakaian'] = 'report/stok/pemakaian';
+$route['aset_report'] = 'master/aset/report';
+$route['404_override'] = '';
+$route['translate_uri_dashes'] = FALSE;
