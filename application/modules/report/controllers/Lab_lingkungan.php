@@ -108,15 +108,6 @@ class Lab_lingkungan extends MY_Controller {
             }
             foreach ($data['pendaftaran'] as $key => $value) {
                 $data['pendaftaran'][$key]->detail = $detailPendaftaran[$value->no_pendaftaran];
-                $listKodeParams = [];
-                foreach ($detailPendaftaran[$value->no_pendaftaran] as $keyKatParam => $valueKatParam) {
-                    $listKodeParams[] = $keyKatParam;
-                }
-                $kategoriParams =  $this->db->query("
-                SELECT * FROM m_kategori_parameter a
-                WHERE a.kd_kategori_parameter IN ('".implode("','",$listKodeParams)."');
-                ")->result();
-                $data['pendaftaran'][$key]->kategori_params = $kategoriParams;
             }
             $titleParam = $this->db->query("
                 SELECT DISTINCT(a.kd_parameter), mparam.nm_parameter FROM t_pendaftaran_detail a
